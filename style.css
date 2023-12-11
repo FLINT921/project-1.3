@@ -74,6 +74,10 @@ h1 {
     background-repeat: no-repeat;
     background-position: center;
 }
+.nav__item:hover {
+    opacity: 0.8;
+    transition: 0.7s;
+}
 
 .nav__item-logo {
     width: 96.55px;
