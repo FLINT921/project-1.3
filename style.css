@@ -7,8 +7,33 @@ body {
     width: 100%;
     background: #f8f8f8;
     font-family: TT Lakes;
-    overflow: hidden;
+    overflow: hidden, scroll;
 }
+
+a {
+    text-decoration: none;
+}
+
+ul,
+li,
+p,
+button {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    border: 0;
+}
+
+h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
 .container {
     margin: 0 auto;
     padding: 0 16px;
@@ -66,6 +91,7 @@ body {
     height: 32px;
     background-color: #eaeaea;
 }
+
 .nav__item-divider_none {
     display: none;
 }
@@ -73,6 +99,14 @@ body {
 .nav__item-burger {
     margin-right: 16.73px;
     background-image: url(img/menu/burger.svg);
+}
+.nav__item-burger_close {
+    margin-right: 16.73px;
+    background-image: url(img/menu/burger-close.svg);
+}
+
+.nav__item-path {
+    background-image: url(img/menu/path.svg);
 }
 
 .nav__item-call {
@@ -103,9 +137,17 @@ body {
 /* Блок "Услуги и сервисы" */
 .title {
     display: flex;
+    align-items: center;
 }
 
-.title__highlight {
+.title__text {
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.title__text::before {
+    position: absolute;
+    content: " ";
     margin-left: -16px;
     margin-right: 12px;
     width: 4px;
@@ -114,22 +156,12 @@ body {
     border-radius: 0 4px 4px 0;
 }
 
-.title__text {
-    font-size: 28px;
-    font-family: TT Lakes;
-    font-weight: 700;
-    line-height: 40px;
-    word-wrap: break-word;
-    text-align: left;
-}
-
 .slide-menu {
     display: flex;
     position: relative;
     flex-wrap: nowrap;
     color: #7e7e82;
     font-size: 16px;
-    font-family: TT Lakes;
     font-weight: 500;
     line-height: 24px;
     word-wrap: break-word;
@@ -205,6 +237,125 @@ body {
 .services_img img {
     width: 100%;
 }
+/* Бургер-меню */
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 24px;
+    width: 320px;
+    height: 1024px;
+    background-color: #fff;
+}
+
+.burger-menu .nav {
+    margin-bottom: 27.54px;
+    height: 88.46px;
+}
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px;
+}
+
+.main-menu a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    height: 32px;
+}
+
+.main-menu a:hover {
+    color: #7e7e82;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.main-menu a:hover::before {
+    position: absolute;
+    content: " ";
+    margin-left: -24px;
+    margin-right: 20px;
+    width: 4px;
+    height: 32px;
+    background-color: #41f6d7;
+    border-radius: 0 4px 4px 0;
+}
+
+.main-menu__item_checked {
+    color: #7e7e82;
+}
+
+.main-menu__item_checked::before {
+    position: absolute;
+    content: " ";
+    margin-left: -24px;
+    margin-right: 20px;
+    width: 4px;
+    height: 32px;
+    background-color: #41f6d7;
+    border-radius: 0 4px 4px 0;
+}
+
+.main-menu__item {
+    color: #1b1c21;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    word-wrap: break-word;
+}
+
+.burger-menu__footer .nav {
+    height: 40px;
+}
+
+.burger-menu .nav__item-call,
+.burger-menu .nav__item-chat,
+.burger-menu .nav__item-profile {
+    display: block;
+}
+
+.contacts {
+    margin-top: 16px;
+    margin-bottom: 40px;
+}
+.contacts__mail {
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+.contacts__number {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+}
+.lang {
+    display: flex;
+    align-items: center;
+    column-gap: 7px;
+    padding: 0;
+    margin-bottom: 32px;
+}
+
+.lang__input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.lang__box {
+    margin-bottom: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.lang__input:checked + .lang__box {
+    color: #7e7e82;
+}
 
 @media (min-width: 768px) {
     .container {
@@ -236,7 +387,7 @@ body {
         margin-right: 0;
     }
 
-    .title__highlight {
+    .title__text::before {
         margin-right: 20px;
         margin-left: -24px;
     }
@@ -275,7 +426,7 @@ body {
 
     .nav {
         justify-content: flex-end;
-        background-color: #f8f8f8;
+        background-color: rgb(0, 0, 0, 0);
         margin-bottom: 8px;
         margin-top: 42px;
         height: 40px;
@@ -303,7 +454,7 @@ body {
         margin-bottom: 8px;
     }
 
-    .title__highlight {
+    .title__text::before {
         margin-right: 28px;
         margin-left: -32px;
     }
@@ -323,5 +474,11 @@ body {
 
     .services_img img {
         min-width: 531px;
+    }
+
+    /* Burger Menu */
+    .burger-menu .nav {
+        margin-top: 0;
+        justify-content: space-between;
     }
 }
