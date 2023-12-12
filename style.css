@@ -57,11 +57,11 @@ h1 {
     justify-content: space-between;
 }
 
-.nav__item-block {
+.nav__item-button {
     display: flex;
 }
 
-.nav__item-block label {
+.nav__item-button label {
     display: none;
 }
 
@@ -441,7 +441,7 @@ h1 {
         height: 40px;
     }
 
-    .nav__item-block label {
+    .nav__item-button label {
         display: flex;
         margin-right: 8px;
         align-items: center;
@@ -453,7 +453,7 @@ h1 {
         word-wrap: break-word;
     }
 
-    .nav__item-block_none {
+    .nav__item-button_none {
         display: none;
     }
 
