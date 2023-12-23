@@ -38,6 +38,7 @@ h1 {
     margin: 0 auto;
     padding: 0 16px;
     max-width: 1120px;
+    overflow: hidden;
 }
 
 .page {
@@ -366,6 +367,86 @@ h1 {
     color: #7e7e82;
 }
 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.wrapper__title {
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 16px;
+    color: #7e7e82;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 24px;
+    word-wrap: break-word;
+    background-color: #fff;
+}
+
+.wrapper-slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 118px;
+}
+
+.wrapper-slider__fade {
+    position: absolute;
+    right: 0;
+    right: -16px;
+    width: 24px;
+    height: 81px;
+    background: linear-gradient(270deg, #f8f8f8 0%, rgba(248, 248, 248, 0) 100%);
+    z-index: 11;
+}
+
+.wrapper-slider .swiper-wrapper {
+    display: flex;
+    max-width: 240px;
+    min-height: 72px;
+}
+
+.wrapper-slider .swiper-slide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 16px;
+    padding: 9px 16px;
+    max-width: 100%;
+    max-height: 100%;
+    background: white;
+    border-radius: 6px;
+    border: 1px #eaeaea solid;
+}
+.wrapper-slider .swiper-slide:last-child {
+    margin-right: 0;
+}
+
+.wrapper-slider__img {
+    margin: auto 0;
+}
+
+.wrapper-slider__button {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ff3e79;
+    border-radius: 50%;
+    background-color: #fff;
+    background-image: url(img/menu/dropdown.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.wrapper-slider .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: #b5b6bc;
+}
+
 @media (min-width: 768px) {
     .container {
         padding: 0 24px;
@@ -425,6 +506,28 @@ h1 {
     .services_img img {
         min-width: 360px;
         border-radius: 6px;
+    }
+    .wrapper-slider {
+        width: 100%;
+        max-height: 160px;
+    }
+
+    .wrapper-slider__fade {
+        display: none;
+    }
+
+    .wrapper-slider .swiper-wrapper {
+        max-width: 224px;
+        max-height: 160px;
+    }
+
+    .wrapper-slider .swiper-slide {
+        margin-right: 24px;
+        /* margin-bottom: 16px; */
+    }
+
+    .swiper-pagination {
+        display: none;
     }
 }
 
